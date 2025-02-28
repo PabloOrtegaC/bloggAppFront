@@ -1,4 +1,3 @@
-// src/hooks/useCreateUser.js
 import { useState } from 'react';
 
 const useCreateUser = () => {

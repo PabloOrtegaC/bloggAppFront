@@ -1,4 +1,3 @@
-// src/components/CreatePost.jsx
 import React, { useState } from 'react';
 import SimpleWysiwyg from './SimpleWysiwyg';
 import useCreatePost from './hooks/useCreatePost';
@@ -11,7 +10,6 @@ const CreatePost = ({ onClose, onPostCreated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Split comma-separated input into an array of trimmed strings
     const tags = tagIds
       .split(',')
       .map(tag => tag.trim())

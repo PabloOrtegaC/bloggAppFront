@@ -1,4 +1,3 @@
-// src/hooks/usePosts.js
 import { useState, useEffect, useCallback } from 'react';
 
 const usePosts = () => {
@@ -6,7 +5,6 @@ const usePosts = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Move fetchPosts out so it can be called on demand
   const fetchPosts = useCallback(async () => {
     setLoading(true);
     try {

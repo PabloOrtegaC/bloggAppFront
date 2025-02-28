@@ -1,4 +1,3 @@
-// src/hooks/useLogin.js
 import { useState } from 'react';
 
 const useLogin = () => {
@@ -9,7 +8,6 @@ const useLogin = () => {
     setLoading(true);
     setError(null);
     try {
-      // The endpoint expects x-www-form-urlencoded data.
       const body = new URLSearchParams();
       body.append('username', email);
       body.append('password', password);
@@ -24,7 +22,7 @@ const useLogin = () => {
         throw new Error(errorData.detail || 'Login failed');
       }
       const data = await response.json();
-      return data; // contains { access_token, token_type }
+      return data;
     } catch (err) {
       setError(err);
       return null;

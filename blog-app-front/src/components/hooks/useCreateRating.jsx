@@ -1,4 +1,3 @@
-// src/hooks/useCreateRating.js
 import { useState } from 'react';
 
 const useCreateRating = () => {

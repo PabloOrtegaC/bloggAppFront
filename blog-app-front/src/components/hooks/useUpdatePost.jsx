@@ -1,4 +1,3 @@
-// src/hooks/useUpdatePost.js
 import { useState } from 'react';
 
 const useUpdatePost = () => {

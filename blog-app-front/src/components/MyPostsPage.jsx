@@ -1,4 +1,3 @@
-// src/components/common/MyPostsPage.jsx
 import React, { useEffect, useState } from 'react';
 import useMyPosts from './hooks/useMyPosts';
 import useDeletePost from './hooks/useDeletePost';
@@ -13,12 +12,10 @@ const MyPostsPage = ({ user }) => {
     console.log('MyPostsPage mounted');
   }, []);
 
-  // Open the EditPost modal with the selected post
   const handleEdit = (post) => {
     setEditPostData(post);
   };
 
-  // Delete post and refresh list
   const handleDelete = async (postId) => {
     if (window.confirm('Are you sure you want to delete this post?')) {
       const result = await deletePost(postId);
@@ -31,12 +28,10 @@ const MyPostsPage = ({ user }) => {
     }
   };
 
-  // Close the edit modal
   const closeEditModal = () => {
     setEditPostData(null);
   };
 
-  // After editing, refetch posts
   const handlePostEdited = (updatedPost) => {
     refetchPosts();
   };

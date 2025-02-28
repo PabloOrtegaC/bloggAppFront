@@ -1,4 +1,3 @@
-// src/components/common/PostsPage.jsx
 import React, { useState, useEffect } from 'react';
 import usePosts from './hooks/usePosts';
 import CreatePost from './CreatePost';
@@ -10,7 +9,6 @@ const PostsPage = ({ user }) => {
   const { createRating } = useCreateRating();
   const [selectedTag, setSelectedTag] = useState('All');
 
-  // Extract unique tags from posts. Each tag is an object with a name.
   const uniqueTags = React.useMemo(() => {
     const tagSet = new Set();
     posts.forEach(post => {
@@ -21,7 +19,6 @@ const PostsPage = ({ user }) => {
     return Array.from(tagSet);
   }, [posts]);
 
-  // Filter posts based on selectedTag
   const filteredPosts = React.useMemo(() => {
     if (selectedTag === 'All') return posts;
     return posts.filter(post =>
@@ -29,8 +26,6 @@ const PostsPage = ({ user }) => {
     );
   }, [posts, selectedTag]);
 
-  // StarRating component compares the logged in user's id (user.id)
-  // with each rating object's user_id to determine the current rating.
   const StarRating = ({ post }) => {
     const backendRating =
       user && post.ratings

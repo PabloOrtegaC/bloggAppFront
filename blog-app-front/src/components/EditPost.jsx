@@ -1,4 +1,3 @@
-// src/components/EditPost.jsx
 import React, { useState } from 'react';
 import SimpleWysiwyg from './SimpleWysiwyg';
 import useUpdatePost from './hooks/useUpdatePost';
@@ -7,12 +6,10 @@ const EditPost = ({ post, onClose, onPostEdited }) => {
   const { updatePost, loading, error } = useUpdatePost();
   const [title, setTitle] = useState(post.title);
   const [content, setContent] = useState(post.content);
-  // Assume post.tags is an array of strings
   const [tagsInput, setTagsInput] = useState(post.tags ? post.tags.join(', ') : '');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Split tags input into an array of trimmed strings
     const tags = tagsInput
       .split(',')
       .map(tag => tag.trim())

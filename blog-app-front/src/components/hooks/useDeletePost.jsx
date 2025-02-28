@@ -1,4 +1,3 @@
-// src/hooks/useDeletePost.js
 import { useState } from 'react';
 
 const useDeletePost = () => {

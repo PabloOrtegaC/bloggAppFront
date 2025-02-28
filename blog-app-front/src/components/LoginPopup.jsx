@@ -1,4 +1,3 @@
-// src/components/LoginPopup.jsx
 import React, { useState } from 'react';
 import useLogin from './hooks/useLogin';
 import useCreateUser from './hooks/useCreateUser';
@@ -6,11 +5,9 @@ import useCreateUser from './hooks/useCreateUser';
 const LoginPopup = ({ onClose, onLoginSuccess }) => {
   const [isRegistering, setIsRegistering] = useState(false);
   
-  // Fields for login:
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   
-  // Fields for registration:
   const [regName, setRegName] = useState('');
   const [regEmail, setRegEmail] = useState('');
   const [regPassword, setRegPassword] = useState('');
@@ -22,11 +19,10 @@ const LoginPopup = ({ onClose, onLoginSuccess }) => {
     e.preventDefault();
     const result = await login(loginEmail, loginPassword);
     if (result) {
-      // Now including user_id from the backend response.
       onLoginSuccess({ 
         token: result.access_token, 
         name: loginEmail,
-        id: result.user_id  // Assuming the backend returns "user_id"
+        id: result.user_id 
       });
       onClose();
     }

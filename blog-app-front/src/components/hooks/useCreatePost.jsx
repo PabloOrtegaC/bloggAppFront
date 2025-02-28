@@ -1,4 +1,3 @@
-// src/hooks/useCreatePost.js
 import { useState } from 'react';
 
 const useCreatePost = () => {
@@ -11,7 +10,6 @@ const useCreatePost = () => {
     setError(null);
     setSuccess(null);
     try {
-      // Retrieve token from localStorage
       const storedUser = localStorage.getItem('user');
       const token = storedUser ? JSON.parse(storedUser).token : null;
 
